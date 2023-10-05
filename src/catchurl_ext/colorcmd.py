@@ -18,5 +18,11 @@ def setcol_info():
 def setcol_skip():
     print(Fore.CYAN, end="")
 
+def setcol_question():
+    print(Fore.LIGHTMAGENTA_EX, end="")
+
+def setcol_user_input():
+    print(Fore.LIGHTYELLOW_EX, end="")
+
 def setcol_clear():
     print(Style.RESET_ALL, end="")

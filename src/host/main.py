@@ -1,5 +1,13 @@
 from ..catchurl_ext import *
-init()
-setcol_error()
-print("Hello")
-setcol_clear()
+from ..utils import *
+import os
+
+
+def main():
+    fetch_usr_input("")
+
+if __name__ == "__main__":
+    init()
+    main()
+    setcol_clear()
+    os.system("pause")
