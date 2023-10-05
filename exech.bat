@@ -1,2 +1,2 @@
 cls
-env\Scripts\python -u src\host\src\main.py
+env\Scripts\python -u -m src.host.main
