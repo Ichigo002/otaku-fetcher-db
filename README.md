@@ -8,7 +8,7 @@ In this project I used my software from other my repository: *CatchURL*
 <ul>
     <li>pyinstaller-v6.0.0</li>
     <li>colorama-v0.4.6</li>
-    <li></li>
+    <li>pandas-v2.1.1</li>
 </ul>
 
 Python version: 3.11.5
