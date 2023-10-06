@@ -1,10 +1,11 @@
-from ..catchurl_ext import *
-from ..utils import *
+from ..catchurl_ext.colorcmd import *
+from .app_runner import *
 import os
 
 
 def main():
-    fetch_usr_input("")
+    app = AppRunner()
+    app.run()
 
 if __name__ == "__main__":
     init()
