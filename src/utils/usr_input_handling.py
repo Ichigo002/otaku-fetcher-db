@@ -12,3 +12,7 @@ def fetch_usr_input(display_text):
 
 def check_usr_inputYN(input):
     return (input.lower() == "y")
+
+# TODO HERE CUZ I KILL YOU SHIT OF BITCH!
+def get_usr_password():
+     return "123"
