@@ -1,0 +1,9 @@
+otaku_db:
+|-settings:
+|  |-
+|
+|-urls:
+|  |-filename
+|  |-url
+|  |-status
+|  |-where_saved
