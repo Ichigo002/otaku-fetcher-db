@@ -1,6 +1,16 @@
 from ..catchurl_ext.colorcmd import *
 import pwinput
 
+def fetch_any_usr_input(display_text):
+    input_txt = display_text + "\n:> "
+
+    setcol_question()
+    print(input_txt, end="")
+    setcol_user_input()
+    output = str(input())
+    setcol_clear()
+    return output
+
 def fetch_usr_input(display_text):
     input_txt = display_text + " (Y/n)?\n:> "
 

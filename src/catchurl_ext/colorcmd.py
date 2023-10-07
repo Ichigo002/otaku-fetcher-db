@@ -26,3 +26,6 @@ def setcol_user_input():
 
 def setcol_clear():
     print(Style.RESET_ALL, end="")
+
+def setcol_decorative():
+    print(Fore.CYAN, end="")

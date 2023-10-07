@@ -26,17 +26,50 @@ class AppRunner():
         if not rv:
             critical_exit()
         
-        print("Success!!!!!")
+        sure_exit = False
+        while not sure_exit:
+            self.display_menu()
+            v = fetch_any_usr_input("Choose option")
+            os.system("cls")
+
+            match v:
+                case "0":
+                    sure_exit = True
+                case _:
+                    setcol_error()
+                    print(f"Invalid value: \"{v}\"")
+                    
+        os.system("cls")
+        setcol_summary()
+        print("Logged out from database.\nGood Night & Good Luck\n")
 
     def display_menu(self):
-        pass
-
-    def load_config(self):
+        setcol_decorative()
+        print("\n --===-- ")
+        setcol_summary()
+        print(  f"| Logged into {self.get_xml_value('./connection/db_name')} ",
+              f"\n| as {self.get_xml_value('./connection/username')} @",
+              f"{self.get_xml_value('./connection/hostname')}")
+        setcol_decorative()
+        print("--===-- ")
         setcol_info()
-        print(f"[Loading XML file \"{self._cnf_xml_path}\"]")
 
-        if not os.path.exists(self._cnf_xml_path):
-            setcol_error()
+        print("0. Log out")
+        print("1. Upload URL")
+        print("2. Upload from CSV")
+        print("3. Reset database")
+        print("4. Show database")
+        
+        setcol_decorative()
+        print(" --===--")
+
+
+    def load_config(self): 
+        setcol_info() 
+        print(f"[Loading XML file \"{self._cnf_xml_path}\"]") 
+        
+        if not os.path.exists(self._cnf_xml_path): 
+            setcol_error() 
             print(f"  LOAD XML ERROR: Couldn't load \"config.xml\" file at \"{self._cnf_xml_path}\"")
             critical_exit()
 
