@@ -1,9 +1,9 @@
 <?xml version="1.0.0" encoding="UTF-8" ?>
 <settings>
     <connection>
-        <hostname>192.168.0.106</hostname>
+        <hostname>192.168.0.109</hostname>
         <db_name>otaku_db</db_name>
-        <username>root</username>
+        <username>pc1</username>
     </connection>
     <csv>
         <load_path>data/csv</load_path>

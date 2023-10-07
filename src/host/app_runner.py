@@ -16,12 +16,17 @@ class AppRunner():
     def run(self):
         self.load_config()
         _pswor = get_usr_password()
-        self.db.connect(
+        rv = self.db.connect(
             host=self.get_xml_value("./connection/hostname"),
             user=self.get_xml_value("./connection/username"),
             db=self.get_xml_value("./connection/db_name"),
             password=_pswor
         )
+
+        if not rv:
+            critical_exit()
+        
+        print("Success!!!!!")
 
     def display_menu(self):
         pass

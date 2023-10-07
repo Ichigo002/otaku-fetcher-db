@@ -1,4 +1,5 @@
 from ..catchurl_ext.colorcmd import *
+import pwinput
 
 def fetch_usr_input(display_text):
     input_txt = display_text + " (Y/n)?\n:> "
@@ -13,6 +14,8 @@ def fetch_usr_input(display_text):
 def check_usr_inputYN(input):
     return (input.lower() == "y")
 
-# TODO HERE CUZ I KILL YOU SHIT OF BITCH!
 def get_usr_password():
-     return "123"
+     setcol_question()
+     print("Enter user's password\n:>", end="")
+     setcol_user_input()
+     return pwinput.pwinput(" ", mask="*")

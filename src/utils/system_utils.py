@@ -3,6 +3,6 @@ import os
 
 def critical_exit():
     setcol_clear()
-    print('\n')
+    print('\nCritical exit.')
     os.system("pause")
     os._exit(-1)

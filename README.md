@@ -10,6 +10,7 @@ In this project I used my software from other my repository: *CatchURL*
     <li>colorama-v0.4.6</li>
     <li>pandas-v2.1.1</li>
     <li>mysql-connector-python-v8.1.0</li>
+    <li>pwinput-v1.0.3</li>
 </ul>
 
 Python version: 3.11.5
