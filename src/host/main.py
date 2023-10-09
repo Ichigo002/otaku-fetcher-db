@@ -1,14 +1,13 @@
 from ..catchurl_ext.colorcmd import *
 from .host_runner import *
-import os
+from ..utils import sys_pause
 
 
 def main():
-    app = HostRunner()
+    app = HostRunner("data", "config.xml")
     app.run()
 
 if __name__ == "__main__":
     init()
     main()
-    setcol_clear()
-    os.system("pause")
+    sys_pause("Press any key to close terminal . . .")
