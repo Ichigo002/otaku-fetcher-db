@@ -1,12 +1,11 @@
 from ..in_common import AppRunner
 from ..catchurl_ext.colorcmd import *
+from os import system
 
 class HostRunner(AppRunner):
 
-    def run(self):
-        super().run()
-
     def display_menu(self):
+        system("cls")
         setcol_decorative()
         print("\n --===-- ")
         setcol_summary()
@@ -25,4 +24,23 @@ class HostRunner(AppRunner):
         
         setcol_decorative()
         print(" --===--")
+
+    def handle_chose_menu_option(self, chose):
+        match(chose):
+            case "0":
+                return True
+            case "1":
+                self.chmenu_upload_url()
+            case _:
+                self.handle_match_unknown_case(chose)
+
+        return False
+    
+    def chmenu_upload_url(self):
+        setcol_decorative()
+        print("\n --===--")
+        setcol_summary()
+        print("| Option: UPLOAD URL")
+
+        system("pause")
 

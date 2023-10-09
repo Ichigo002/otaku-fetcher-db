@@ -12,7 +12,10 @@ class AppRunner():
         self._cnf_xml_path = self.normalize_path(config_path)
 
         self.db = DBConnector()
-
+    
+    """
+    Starts running all application. Here everything starts & ends forever!!!
+    """
     def run(self):
         self.load_config()
         self.connect_db()
@@ -22,17 +25,27 @@ class AppRunner():
             self.display_menu()
             v = fetch_any_usr_input("Choose option")
             os.system("cls")
-
-            match v:
-                case "0":
-                    sure_exit = True
-                case _:
-                    setcol_error()
-                    print(f"Invalid value: \"{v}\"")
-                    
+            sure_exit = self.handle_chose_menu_option(v)
+                   
         os.system("cls")
         setcol_summary()
         print("Logged out from database.\nGood Night & Good Luck\n")
+
+    """
+    chose : string value -> user input from displayed menu
+    Return: True -> log out and exit app
+    """
+    def handle_chose_menu_option(self,chose):
+        match chose:
+            case "0":
+                return True
+            case _:
+               self.handle_match_unknown_case(chose)
+        return False 
+
+    def handle_match_unknown_case(self, chose):
+        setcol_error()
+        print(f"Invalid value: \"{chose}\"") 
 
     def connect_db(self):
         _pswor = get_usr_password()
@@ -47,7 +60,18 @@ class AppRunner():
             critical_exit()
 
     def display_menu(self):
-        pass
+        self.print_decoration()
+        setcol_summary()
+        print("| Default empty menu")
+        self.print_decoration()
+        print("0. Log out")
+        self.print_decoration()
+        
+
+
+    def print_decoration(self):
+        setcol_decorative()
+        print(" --===-- ")
 
     def load_config(self): 
         setcol_info() 

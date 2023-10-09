@@ -11,6 +11,7 @@ In this project I used my software from other my repository: *CatchURL*
     <li>pandas-v2.1.1</li>
     <li>mysql-connector-python-v8.1.0</li>
     <li>pwinput-v1.0.3</li>
+    <li>keyboard-0.13.5</li>
 </ul>
 
 Python version: 3.11.5
