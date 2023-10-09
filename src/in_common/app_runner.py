@@ -15,17 +15,8 @@ class AppRunner():
 
     def run(self):
         self.load_config()
-        _pswor = get_usr_password()
-        rv = self.db.connect(
-            host=self.get_xml_value("./connection/hostname"),
-            user=self.get_xml_value("./connection/username"),
-            db=self.get_xml_value("./connection/db_name"),
-            password=_pswor
-        )
+        self.connect_db()
 
-        if not rv:
-            critical_exit()
-        
         sure_exit = False
         while not sure_exit:
             self.display_menu()
@@ -43,26 +34,20 @@ class AppRunner():
         setcol_summary()
         print("Logged out from database.\nGood Night & Good Luck\n")
 
+    def connect_db(self):
+        _pswor = get_usr_password()
+        rv = self.db.connect(
+            host=self.get_xml_value("./connection/hostname"),
+            user=self.get_xml_value("./connection/username"),
+            db=self.get_xml_value("./connection/db_name"),
+            password=_pswor
+        )
+
+        if not rv:
+            critical_exit()
+
     def display_menu(self):
-        setcol_decorative()
-        print("\n --===-- ")
-        setcol_summary()
-        print(  f"| Logged into {self.get_xml_value('./connection/db_name')} ",
-              f"\n| as {self.get_xml_value('./connection/username')} @",
-              f"{self.get_xml_value('./connection/hostname')}")
-        setcol_decorative()
-        print("--===-- ")
-        setcol_info()
-
-        print("0. Log out")
-        print("1. Upload URL")
-        print("2. Upload from CSV")
-        print("3. Reset database")
-        print("4. Show database")
-        
-        setcol_decorative()
-        print(" --===--")
-
+        pass
 
     def load_config(self): 
         setcol_info() 

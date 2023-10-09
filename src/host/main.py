@@ -1,10 +1,10 @@
 from ..catchurl_ext.colorcmd import *
-from .app_runner import *
+from .host_runner import *
 import os
 
 
 def main():
-    app = AppRunner()
+    app = HostRunner()
     app.run()
 
 if __name__ == "__main__":
